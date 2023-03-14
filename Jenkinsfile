@@ -2,6 +2,11 @@ pipeline {
 
     agent any
 
+    tools {
+        maven 'Maven 3.9.0'
+        // jdk 'openjdk17.0.6'
+    }
+
     stages {
         stage ('Git Pull') {
             steps {
@@ -13,6 +18,7 @@ pipeline {
         stage ('Maven Build') {
             steps {
                 script {
+                    sh 'export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-11.0.2.jdk/Contents/Home'
                     sh 'mvn clean install'
                 }
             }
