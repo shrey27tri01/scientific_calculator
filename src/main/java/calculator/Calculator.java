@@ -29,17 +29,8 @@ public class Calculator {
         do {
             int choice;
             System.out.println("Enter your choice");
-            System.out.print("""
-                1. Addition\s
-                2. Subtraction\s
-                3. Multiplication\s
-                4. Division\s
-                5. Square Root\s
-                6. Factorial\s
-                7. Natural logarithm (base e)\s
-                8. Power\s
-                9. Exit\s
-                """);
+            System.out.print("1. Addition\n" +
+                    "2. Subtraction\n");
             System.out.print("Choice: ");
             try {
                 choice = scanner.nextInt();
