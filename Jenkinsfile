@@ -1,4 +1,7 @@
 pipeline {
+
+    agent any
+
     stages {
         stage ('Git Pull') {
             steps {
@@ -9,7 +12,9 @@ pipeline {
         }
         stage ('Maven Build') {
             steps {
-                sh 'mvn clean install'
+                script {
+                    sh 'mvn clean install'
+                }
             }
         }
     }
