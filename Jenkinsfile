@@ -10,6 +10,7 @@ pipeline {
 
     tools {
         maven 'Maven 3.9.0'
+        docker 'docker19.03.13'
     }
 
     stages {
