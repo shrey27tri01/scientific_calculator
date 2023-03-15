@@ -52,6 +52,7 @@ public class Calculator {
 
                 default:
                     System.out.println("Exiting Program...");
+                    scanner.close();
                     return;
             }
 
