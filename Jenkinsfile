@@ -27,10 +27,19 @@ pipeline {
                 }
             }
         }
-        stage('Build Docker Image') {
+        stage ('Build Docker Image') {
             steps {
                 script {
                     dockerImage = docker.build registry + ":latest"
+                }
+            }
+        }
+        stage ('Push Docker Image to DockerHub') {
+            steps {
+                script {
+                    docker.withRegistry('', registryCredential) {
+                        dockerImage.push()
+                    }
                 }
             }
         }
