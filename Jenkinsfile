@@ -9,8 +9,7 @@ pipeline {
     }
 
     tools {
-        maven 'Maven 3.9.0'
-        docker 'docker19.03.13'
+        maven 'Maven 3.6.3'
     }
 
     stages {
@@ -18,18 +17,17 @@ pipeline {
             steps {
                 git url: 'https://github.com/shrey27tri01/scientific_calculator.git',
                 branch: 'master',
-                credentialsId: 'GitHubCredentials'
+                credentialsId: 'GitHub'
             }
         }
         stage ('Maven Build') {
             steps {
                 script {
-                    sh 'export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-11.0.2.jdk/Contents/Home'
                     sh 'mvn clean install'
                 }
             }
         }
-        stage('Docker Build To Image') {
+        stage('Build Docker Image') {
             steps {
                 script {
                     dockerImage = docker.build registry + ":latest"
