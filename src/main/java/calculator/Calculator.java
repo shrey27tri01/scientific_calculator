@@ -94,7 +94,7 @@ public class Calculator {
     }
 
     public double mul (double num1, double num2) {
-        logger.info("[MULTIPLICATION] - " + num2 + " FROM " + num1);
+        logger.info("[MULTIPLICATION] - " + num2 + " TO " + num1);
         double result = num1 * num2;
         logger.info("[RESULT - MULTIPLICATION] - " + result);
         return result;

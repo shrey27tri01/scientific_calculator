@@ -26,7 +26,19 @@ public class CalculatorTest {
 
     @Test
     public void subtractionFalsePositive() {
-        assertNotEquals("Adding two numbers for False Positive", 69, calculator.sub(78.3221, 4), DELTA);
-        assertNotEquals("Adding two numbers for False Positive", 7.99972, calculator.sub(9, 1), DELTA);
+        assertNotEquals("Subtracting two numbers for False Positive", 69, calculator.sub(78.3221, 4), DELTA);
+        assertNotEquals("Subtracting two numbers for False Positive", 7.99972, calculator.sub(9, 1), DELTA);
+    }
+
+    @Test
+    public void multiplicationTruePositive() {
+        assertEquals("Multiplying two numbers for True Positive", 1.58652, calculator.mul(2.34, 0.678), DELTA);
+        assertEquals("Multiplying two numbers for True Positive", 0.0000, calculator.mul(9.87, 0), DELTA);
+    }
+
+    @Test
+    public void multiplicationFalsePositive() {
+        assertNotEquals("Multiplying two numbers for False Positive", 69, calculator.mul(78.3221, 4), DELTA);
+        assertNotEquals("Multiplying two numbers for False Positive", 7.99972, calculator.mul(9, 1), DELTA);
     }
 }
