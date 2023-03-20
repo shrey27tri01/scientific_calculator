@@ -35,7 +35,8 @@ public class Calculator {
             System.out.println("Enter your choice");
             System.out.print("1. Addition\n" +
                     "2. Subtraction\n" +
-                    "3. Multiplication\n");
+                    "3. Multiplication\n" +
+                    "4. Division\n");
             System.out.print("Choice: ");
             try {
                 choice = scanner.nextInt();

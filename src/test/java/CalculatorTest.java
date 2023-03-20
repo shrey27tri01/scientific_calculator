@@ -41,4 +41,16 @@ public class CalculatorTest {
         assertNotEquals("Multiplying two numbers for False Positive", 69, calculator.mul(78.3221, 4), DELTA);
         assertNotEquals("Multiplying two numbers for False Positive", 7.99972, calculator.mul(9, 1), DELTA);
     }
+
+    @Test
+    public void divisionTruePositive() {
+        assertEquals("Dividing two numbers for True Positive", 3.451327433628318, calculator.div(2.34, 0.678), DELTA);
+        assertEquals("Dividing two numbers for True Positive", 9.87, calculator.div(9.87, 1), DELTA);
+    }
+
+    @Test
+    public void divisionFalsePositive() {
+        assertNotEquals("Dividing two numbers for False Positive", 69, calculator.div(78.3221, 4), DELTA);
+        assertNotEquals("Dividing two numbers for False Positive", 7.99972, calculator.div(9, 1), DELTA);
+    }
 }
