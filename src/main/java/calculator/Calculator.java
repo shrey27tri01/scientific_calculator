@@ -49,6 +49,14 @@ public class Calculator {
                     System.out.println("Result: " + calculator.add(num1, num2) + "\n");
                     break;
 
+                case 2:
+                    System.out.println("Enter number 1: ");
+                    num1 = scanner.nextDouble();
+                    System.out.println("Enter number 2: ");
+                    num2 = scanner.nextDouble();
+                    System.out.println("Result: " + calculator.sub(num1, num2) + "\n");
+                    break;
+
 
                 default:
                     System.out.println("Exiting Program...");
@@ -61,6 +69,11 @@ public class Calculator {
 
     public double add (double num1, double num2) {
         double result = num1 + num2;
+        return result;
+    }
+
+    public double sub (double num1, double num2) {
+        double result = num1 - num2;
         return result;
     }
 }

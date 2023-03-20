@@ -17,4 +17,16 @@ public class CalculatorTest {
         assertNotEquals("Adding two numbers for False Positive", 69, calculator.add(2.3221, 4), DELTA);
         assertNotEquals("Adding two numbers for False Positive", 1245.672, calculator.add(9, 3), DELTA);
     }
+
+    @Test
+    public void subtractionTruePositive() {
+        assertEquals("Subtracting two numbers for True Positive", 1.662, calculator.sub(2.34, 0.678), DELTA);
+        assertEquals("Subtracting two numbers for True Positive", 5.54328, calculator.sub(9, 3.45672), DELTA);
+    }
+
+    @Test
+    public void subtractionFalsePositive() {
+        assertNotEquals("Adding two numbers for False Positive", 69, calculator.sub(78.3221, 4), DELTA);
+        assertNotEquals("Adding two numbers for False Positive", 7.99972, calculator.sub(9, 1), DELTA);
+    }
 }
