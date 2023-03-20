@@ -70,6 +70,14 @@ public class Calculator {
                     System.out.println("Result: " + calculator.mul(num1, num2) + "\n");
                     break;
 
+                case 4:
+                    System.out.println("Enter number 1: ");
+                    num1 = scanner.nextDouble();
+                    System.out.println("Enter number 2: ");
+                    num2 = scanner.nextDouble();
+                    System.out.println("Result: " + calculator.div(num1, num2) + "\n");
+                    break;
+
                 default:
                     System.out.println("Exiting Program...");
                     scanner.close();
@@ -97,6 +105,17 @@ public class Calculator {
         logger.info("[MULTIPLICATION] - " + num2 + " TO " + num1);
         double result = num1 * num2;
         logger.info("[RESULT - MULTIPLICATION] - " + result);
+        return result;
+    }
+
+    public double div (double num1, double num2) {
+        logger.info("[DIVISION] - " + num2 + " BY " + num1);
+        if (num2 == 0) {
+            double result = Integer.MIN_VALUE;
+            logger.info("[RESULT - DIVISION] - ERROR: DIVISION BY ZERO");
+        }
+        double result = num1 / num2;
+        logger.info("[RESULT - DIVISION] - " + result);
         return result;
     }
 }
