@@ -2,8 +2,12 @@ package calculator;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class Calculator {
+
+    private static final Logger logger = LogManager.getLogger();
 
     private static double num1, num2;
 
@@ -68,12 +72,16 @@ public class Calculator {
     }
 
     public double add (double num1, double num2) {
+        logger.info("[ADDITION] - " + num2 + " TO " + num1);
         double result = num1 + num2;
+        logger.info("[RESULT - ADDITION] - " + result);
         return result;
     }
 
     public double sub (double num1, double num2) {
+        logger.info("[SUBTRACTION] - " + num2 + " FROM " + num1);
         double result = num1 - num2;
+        logger.info("[RESULT - SUBTRACTION] - " + result);
         return result;
     }
 }
