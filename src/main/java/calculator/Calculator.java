@@ -79,6 +79,12 @@ public class Calculator {
                     System.out.println("Result: " + calculator.div(num1, num2) + "\n");
                     break;
 
+                case 5:
+                    System.out.print("Enter a number : ");
+                    num1 = scanner.nextDouble();
+                    System.out.println("Result: " + calculator.sqroot(num1) + "\n");
+                    break;
+
                 default:
                     System.out.println("Exiting Program...");
                     scanner.close();
@@ -117,6 +123,13 @@ public class Calculator {
         }
         double result = num1 / num2;
         logger.info("[RESULT - DIVISION] - " + result);
+        return result;
+    }
+
+    public double sqroot (double num1) {
+        logger.info("[SQUARE ROOT] - " + num1);
+        double result = Math.sqrt(num1);
+        logger.info("[RESULT - SQUARE ROOT] - " + result);
         return result;
     }
 }
