@@ -34,7 +34,8 @@ public class Calculator {
             int choice;
             System.out.println("Enter your choice");
             System.out.print("1. Addition\n" +
-                    "2. Subtraction\n");
+                    "2. Subtraction\n" +
+                    "3. Multiplication\n");
             System.out.print("Choice: ");
             try {
                 choice = scanner.nextInt();
@@ -61,6 +62,13 @@ public class Calculator {
                     System.out.println("Result: " + calculator.sub(num1, num2) + "\n");
                     break;
 
+                case 3:
+                    System.out.println("Enter number 1: ");
+                    num1 = scanner.nextDouble();
+                    System.out.println("Enter number 2: ");
+                    num2 = scanner.nextDouble();
+                    System.out.println("Result: " + calculator.mul(num1, num2) + "\n");
+                    break;
 
                 default:
                     System.out.println("Exiting Program...");
@@ -82,6 +90,13 @@ public class Calculator {
         logger.info("[SUBTRACTION] - " + num2 + " FROM " + num1);
         double result = num1 - num2;
         logger.info("[RESULT - SUBTRACTION] - " + result);
+        return result;
+    }
+
+    public double mul (double num1, double num2) {
+        logger.info("[MULTIPLICATION] - " + num2 + " FROM " + num1);
+        double result = num1 * num2;
+        logger.info("[RESULT - MULTIPLICATION] - " + result);
         return result;
     }
 }
