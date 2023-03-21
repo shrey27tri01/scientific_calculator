@@ -12,7 +12,6 @@ public class Calculator {
     private static double num1, num2;
 
     public Calculator() {
-
     }
 
     public Calculator (double n) {
