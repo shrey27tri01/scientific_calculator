@@ -95,6 +95,12 @@ public class Calculator {
                     System.out.println("Result: " + calculator.fact(num1) + "\n");
                     break;
 
+                case 7:
+                    System.out.print("Enter a number : ");
+                    num1 = scanner.nextDouble();
+                    System.out.println("Result: " + calculator.naturalLog(num1) + "\n");
+                    break;
+
                 default:
                     System.out.println("Exiting Program...");
                     scanner.close();
@@ -151,6 +157,24 @@ public class Calculator {
         }
         logger.info("[RESULT - FACTORIAL] - " + result);
         return  result;
+    }
+
+    public double naturalLog(double num1) {
+        logger.info("[NATURAL LOG] - " + num1);
+        double result = 0;
+        try {
+            if (num1 <0 ) {
+                result = Double.NaN;
+                throw new ArithmeticException("Case of NaN 0.0/0.0");
+            }
+            else {
+                result = Math.log(num1);
+            }
+        } catch (ArithmeticException error) {
+            System.out.println("[EXCEPTION - LOG] - Cannot find log of negative numbers " + error.getLocalizedMessage());
+        }
+        logger.info("[RESULT - NATURAL LOG] - " + result);
+        return result;
     }
 }
 
