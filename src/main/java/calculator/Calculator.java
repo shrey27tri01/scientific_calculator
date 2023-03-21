@@ -40,7 +40,8 @@ public class Calculator {
                     "5. Square Root\n" +
                     "6. Factorial\n" +
                     "7. Natural Logarithm (base e)\n" +
-                    "8. Power\n");
+                    "8. Power\n" +
+                    "9. Exit the program\n");
             System.out.print("Choice: ");
             try {
                 choice = scanner.nextInt();
@@ -99,6 +100,14 @@ public class Calculator {
                     System.out.print("Enter a number : ");
                     num1 = scanner.nextDouble();
                     System.out.println("Result: " + calculator.naturalLog(num1) + "\n");
+                    break;
+
+                case 8:
+                    System.out.println("Enter number 1: ");
+                    num1 = scanner.nextDouble();
+                    System.out.println("Enter number 2: ");
+                    num2 = scanner.nextDouble();
+                    System.out.println(num1 + " raised to the power " + num2 + " is " + calculator.power(num1, num2) + "\n");
                     break;
 
                 default:
@@ -174,6 +183,13 @@ public class Calculator {
             System.out.println("[EXCEPTION - LOG] - Cannot find log of negative numbers " + error.getLocalizedMessage());
         }
         logger.info("[RESULT - NATURAL LOG] - " + result);
+        return result;
+    }
+
+    public double power(double number1, double number2) {
+        logger.info("[POWER - " + number1 + " RAISED TO] " + number2);
+        double result = Math.pow(number1,number2);
+        logger.info("[RESULT - POWER] - " + result);
         return result;
     }
 }
