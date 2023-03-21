@@ -36,7 +36,11 @@ public class Calculator {
             System.out.print("1. Addition\n" +
                     "2. Subtraction\n" +
                     "3. Multiplication\n" +
-                    "4. Division\n");
+                    "4. Division\n" +
+                    "5. Square Root\n" +
+                    "6. Factorial\n" +
+                    "7. Natural Logarithm (base e)\n" +
+                    "8. Power\n");
             System.out.print("Choice: ");
             try {
                 choice = scanner.nextInt();
@@ -85,6 +89,12 @@ public class Calculator {
                     System.out.println("Result: " + calculator.sqroot(num1) + "\n");
                     break;
 
+                case 6:
+                    System.out.print("Enter a number : ");
+                    num1 = scanner.nextDouble();
+                    System.out.println("Result: " + calculator.fact(num1) + "\n");
+                    break;
+
                 default:
                     System.out.println("Exiting Program...");
                     scanner.close();
@@ -131,6 +141,16 @@ public class Calculator {
         double result = Math.sqrt(num1);
         logger.info("[RESULT - SQUARE ROOT] - " + result);
         return result;
+    }
+
+    public double fact(double num1) {
+        logger.info("[FACTORIAL] - " + num1);
+        double result = 1;
+        for(int i = 1; i <= num1; ++i) {
+            result *= i;
+        }
+        logger.info("[RESULT - FACTORIAL] - " + result);
+        return  result;
     }
 }
 
